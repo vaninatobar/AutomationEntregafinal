@@ -9,7 +9,6 @@ import selenium.entregaFinal.pages.AccountCustomerPage;
 import selenium.entregaFinal.pages.CustomerAccountLogout;
 import selenium.entregaFinal.pages.LoginPage;
 
-
 @RunWith(JUnitParamsRunner.class)
 public class Sesion2Test extends BaseTest {
 

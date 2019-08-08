@@ -74,7 +74,9 @@ public class CheckOutPage extends BasePage {
 	/*
 	 * Step 5: Payment Method 
 	 */
-	@FindBy (how = How.CSS, using = "input[name='agree']") 
+	//@FindBy (how = How.CSS, using = "input[name='agree']") 
+	
+	@FindBy (how = How.XPATH, using = "//*[@id='collapse-payment-method']/div/div[2]/div/input[1]")
 	private WebElement checkPaymentMethod;	
 	
 	@FindBy (how = How.XPATH, using = "//*[@id='button-payment-method']")

@@ -36,22 +36,23 @@
 		<dependency>
 			<groupId>pl.pragmatists</groupId>
 			<artifactId>JUnitParams</artifactId>
-			<version>1.1.0</version>
+			<version>1.1.1</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
-	
+
 	<build>
-	<plugins>
-	  <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-                <includes>
-                    <include>${runSuite}</include>
-                </includes>
-            </configuration>
-        </plugin>
-        </plugins>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>${runSuite}</include>
+					</includes>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>

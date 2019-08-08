@@ -4,7 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebElement;
 
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
@@ -28,8 +27,7 @@ public class Sesion5Test extends BaseTest {
 		ShoppingCartPage cart;
 		cart = search.optionShoppingCart();
 		cart.removeProductShoppingCart(product);
-		WebElement e = waitElement("//p[contains(.,'Your shopping cart is empty!')]");
-		assertTrue("The Shopping Cart is not empty: ",
-				cart.checkEmptyShoppingCart().contains("Your shopping cart is empty!"));
+		waitElementNR("//p[contains(.,'Your shopping cart is empty!')]");
+		assertTrue("The Shopping Cart is not empty: ", cart.checkEmptyShoppingCart().contains("Your shopping cart is empty!"));
 	}
 }
