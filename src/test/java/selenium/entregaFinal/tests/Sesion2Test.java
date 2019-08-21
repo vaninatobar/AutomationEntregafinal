@@ -23,6 +23,7 @@ public class Sesion2Test extends BaseTest {
 		homePage.clickOptionAccount();
 		CustomerAccountLogout logout;
 		logout = account.clickLogout();
+		
 
 	}
 

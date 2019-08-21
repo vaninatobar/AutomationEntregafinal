@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebElement;
 
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
@@ -33,8 +34,8 @@ public class Sesion3Test extends BaseTest{
 				cart.getProductNameCart().contains(productExpected));
 		assertTrue("This Total Price is not correct: " + cart.getProductPriceCart(),
 				cart.getProductPriceCart().contains(cart.getProductPriceCartTotal()));
-
 		CheckOutPage check;
+		
 		check = cart.clickCheckOut();
 		check.signUpCheckOut(email, password);
 		removeBanner();
@@ -42,7 +43,8 @@ public class Sesion3Test extends BaseTest{
 		check.clickShippingAddressStep3();
 		check.clickShippingMethodStep4();
 		focusElementScroll("button-payment-method");
-		waitElementNR("//*[@id='collapse-payment-method']/div/div[2]/div/input[1]");
+		WebElement element = waitElement("//*[@id='collapse-payment-method']/div/div[2]/div/input[1]");
+		assertTrue(element.isDisplayed());
 		check.clickPaymentMethodStep5();
 		check.clickConfirmOrderStep6();
 
