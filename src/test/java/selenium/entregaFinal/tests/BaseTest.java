@@ -27,7 +27,7 @@ public class BaseTest {
 	@Before
 	public void SetUp() {
 
-		System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","src/resources/chromedriver.exe");
 		driver = new ChromeDriver();				
 		driver.get(prop.getString("BASE_URL"));
 		homePage = PageFactory.initElements(driver, HomePage.class);	

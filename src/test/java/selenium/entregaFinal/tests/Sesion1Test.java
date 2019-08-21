@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import selenium.entregaFinal.pages.RegisterPage;
+
 @RunWith(JUnitParamsRunner.class)
 public class Sesion1Test extends BaseTest {
 
