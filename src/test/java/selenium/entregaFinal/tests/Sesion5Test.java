@@ -27,7 +27,7 @@ public class Sesion5Test extends BaseTest {
 		ShoppingCartPage cart;
 		cart = search.optionShoppingCart();
 		cart.removeProductShoppingCart(product);
-		waitElementNR("//p[contains(.,'Your shopping cart is empty!')]");
+		waitElementWithOutReturn("//p[contains(.,'Your shopping cart is empty!')]");
 		assertTrue("The Shopping Cart is not empty: ", cart.checkEmptyShoppingCart().contains("Your shopping cart is empty!"));
 	}
 }

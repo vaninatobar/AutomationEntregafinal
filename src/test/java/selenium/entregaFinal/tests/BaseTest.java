@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,8 +27,8 @@ public class BaseTest {
 	@Before
 	public void SetUp() {
 
-		System.setProperty("webdriver.chrome.driver","src/resources/chromedriver.exe");
-		driver = new ChromeDriver();				
+		System.setProperty("webdriver.gecko.driver","src/resources/geckodriver.exe");
+		driver = new FirefoxDriver();						
 		driver.get(prop.getString("BASE_URL"));
 		homePage = PageFactory.initElements(driver, HomePage.class);	
     }
@@ -58,15 +58,12 @@ public class BaseTest {
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		WebElement webElement;
 		webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
-		return webElement;
-		
+		return webElement;		
 	}
 		
-	public void waitElementNR(String element) {
+	public void waitElementWithOutReturn(String element) {
 		WebDriverWait wait = new WebDriverWait(driver, 50);
-		WebElement webElement;
-		webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
-		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));		
 	}
 		
 }
